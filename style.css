@@ -1,0 +1,229 @@
+:root {
+  --bg-color: #f7f3ea;
+  --white-color: #ffffff;
+  --text-color: #202522;
+  --button-bg: #174c4a;
+  --primary-bg: #174c4a;
+  --border-color: #e8ddca;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  align-items: center;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  display: flex;
+  gap: 10px;
+  height: 82px;
+  justify-content: space-between;
+  padding: 13px 24px;
+  position: fixed;
+  top: 24px;
+  left: 80px;
+  right: 80px;
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links li {
+  list-style-type: none;
+}
+
+.nav-links li a {
+  color: var(--text-color);
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-style: medium;
+  font-weight: 500;
+  letter-spacing: 1.8%;
+  line-height: 100%;
+  text-decoration: none;
+}
+
+.book-cta {
+  background: var(--button-bg);
+  border: none;
+  border-radius: 24px;
+  color: var(--white-color);
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-style: semibold;
+  font-weight: 600;
+  gap: 10px;
+  letter-spacing: 1.8%;
+  line-height: 100%;
+  padding: 15px 25px;
+  transition: all 0.3s ease;
+}
+
+.book-cta:hover {
+  background: var(--border-color);
+  color: var(--primary-bg);
+}
+
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-slider-wrapper {
+  display: flex; 
+  width: 300%; 
+  height: 100%; 
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hero-slide {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw; 
+  flex-shrink: 0;
+}
+
+.slide-1 {
+  background:
+    linear-gradient(to bottom, rgba(16, 47, 45, 0.6), rgba(16, 47, 45, 0.7)),
+    url(assets/hero-bg-1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide-2 {
+  background:
+    linear-gradient(to bottom, rgba(16, 47, 45, 0.6), rgba(16, 47, 45, 0.7)),
+    url(assets/hero-bg-2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide-3 {
+  background:
+    linear-gradient(to bottom, rgba(16, 47, 45, 0.6), rgba(16, 47, 45, 0.7)),
+    url(assets/hero-bg-3.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 140px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-welcome-text {
+  color: var(--white-color);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 10%;
+  padding-bottom: 24px;
+}
+
+.hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(2rem, 1.333rem + 3.333vw, 4rem);
+  line-height: 64px;
+  text-align: center;
+  letter-spacing: 0.018em;
+  color: var(--white-color);
+  padding-bottom: 24px;
+} 
+
+.hero-sub-text {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  color: var(--bg-color);
+  padding-bottom: 48px;
+  max-width: 640px;
+  text-align: center;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+}
+
+.hero-ctas button {
+  padding: 17px 23px;
+  border-radius: 26px;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 1.8%;
+}
+
+.primary-btn {
+  background: var(--white-color);
+  border: none;
+  color: var(--button-bg);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--white-color);
+  border: 1px solid var(--white-color);
+}
+
+.hero-slider-indicator {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+  position: absolute; 
+  bottom: 40px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 10;
+}
+
+.hero-slider-indicator .indicator-dot {
+  width: 40px;
+  height: 5px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.hero-slider-indicator .indicator-dot.active {
+  background: var(--white-color);
+}
+
+
+
