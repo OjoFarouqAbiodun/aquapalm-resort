@@ -5,8 +5,8 @@
   --button-bg: #174c4a;
   --primary-bg: #174c4a;
   --border-color: #e8ddca;
-  --tag-color: #315C4A;
-  --section-text-color: #6F756F;
+  --tag-color: #315c4a;
+  --section-text-color: #6f756f;
 }
 
 * {
@@ -56,6 +56,11 @@ header {
   letter-spacing: 1.8%;
   line-height: 100%;
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--section-text-color)
 }
 
 .book-cta {
@@ -288,7 +293,7 @@ header {
   font-size: 14px;
   letter-spacing: 1.8%;
   text-decoration: underline;
-  color: var(--button-bg)
+  color: var(--button-bg);
 }
 
 .about-image-content img {
@@ -299,3 +304,74 @@ header {
   border-radius: 16px;
 }
 
+.room-section {
+  width: 100%;
+  padding: 100px 10px;
+  display: flex;
+  justify-content: center;
+  background: var(--bg-color);
+}
+
+.room-text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  padding-bottom: 37px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 26px;
+}
+
+.card {
+  background: var(--white-color);
+  padding: 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card-image img {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.card-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-title {
+  font-family: "Playfair Display", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22px;
+  color: var(--primary-bg)
+}
+
+.card-sub-text {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--section-text-color);
+}
+
+.card-link-text {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--button-bg);
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+}

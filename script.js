@@ -7,7 +7,7 @@ const totalSlides = dots.length;
 const totalPanels = slides.length + 1;
 wrapper.style.width = totalPanels * 100 + "%";
 
-let currentIndex = 0; // The slide we are currently looking at
+let currentIndex = 0; 
 let autoplayTimer;
 let snapTimer;
 
