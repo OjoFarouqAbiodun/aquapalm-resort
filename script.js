@@ -3,13 +3,13 @@ const dots = document.querySelectorAll(".indicator-dot");
 const slides = wrapper.querySelectorAll(".hero-slide");
 const firstClone = slides[0].cloneNode(true);
 wrapper.appendChild(firstClone);
-const totalSlides = dots.length; 
-const totalPanels = slides.length + 1; 
-wrapper.style.width = totalPanels * 100 + "%"; 
+const totalSlides = dots.length;
+const totalPanels = slides.length + 1;
+wrapper.style.width = totalPanels * 100 + "%";
 
 let currentIndex = 0; // The slide we are currently looking at
-let autoplayTimer; 
-let snapTimer; 
+let autoplayTimer;
+let snapTimer;
 
 function goToSlide(index) {
   currentIndex = index;
@@ -20,11 +20,10 @@ function goToSlide(index) {
 }
 
 function snapBackToStart() {
-  wrapper.style.transition = "none"; 
+  wrapper.style.transition = "none";
   goToSlide(0);
-  void wrapper.offsetHeight; 
-  wrapper.style.transition =
-    "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)"; 
+  void wrapper.offsetHeight;
+  wrapper.style.transition = "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)";
 }
 
 function startAutoplay() {
@@ -33,9 +32,9 @@ function startAutoplay() {
     goToSlide(nextIndex);
 
     if (nextIndex === totalSlides) {
-      snapTimer = setTimeout(snapBackToStart, 650); 
+      snapTimer = setTimeout(snapBackToStart, 650);
     }
-  }, 5000); 
+  }, 5000);
 }
 
 function stopAutoplay() {
@@ -48,8 +47,8 @@ dots.forEach((dot) => {
     const clickedIndex = parseInt(e.target.getAttribute("data-index"));
 
     stopAutoplay();
-    goToSlide(clickedIndex); 
-    startAutoplay(); 
+    goToSlide(clickedIndex);
+    startAutoplay();
   });
 });
 
