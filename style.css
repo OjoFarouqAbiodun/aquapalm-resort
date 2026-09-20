@@ -36,6 +36,11 @@ header {
   width: calc(100% - 160px);
   max-width: 1280px;
   z-index: 100;
+  transition: transform 0.35s ease;
+}
+
+.header-hidden {
+  transform: translate(-50%, calc(-100% - 48px));
 }
 
 .nav-links {

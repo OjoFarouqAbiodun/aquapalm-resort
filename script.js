@@ -78,3 +78,25 @@ navToggle.addEventListener("click", () => {
 siteNav.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", closeNav);
 });
+
+const header = document.querySelector("header");
+
+let lastScrollY = window.scrollY;
+const hideThreshold = 120;
+
+window.addEventListener(
+  "scroll",
+  () => {
+    const scrollY = window.scrollY;
+
+    if (scrollY > lastScrollY && scrollY > hideThreshold) {
+      header.classList.add("header-hidden");
+      closeNav();
+    } else if (scrollY < lastScrollY) {
+      header.classList.remove("header-hidden");
+    }
+
+    lastScrollY = scrollY;
+  },
+  { passive: true }
+);
