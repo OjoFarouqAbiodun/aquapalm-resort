@@ -312,7 +312,8 @@ header {
 
 .room-section,
 .experience-section,
-.gallery-section {
+.gallery-section,
+.testimonial-section {
   width: 100%;
   padding: 100px 10px;
   display: flex;
@@ -322,7 +323,8 @@ header {
 
 .room-text-content,
 .experience-text-content,
-.gallery-text-content {
+.gallery-text-content,
+.testimonial-text-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -392,6 +394,9 @@ header {
   background: var(--border-color);
 }
 
+.gallery-section {
+  background: var(--white-color);
+}
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -446,4 +451,70 @@ header {
   display: inline-flex;
   gap: 8px;
   align-items: center;
+}
+
+.testimonial-rating {
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+.testimonial-rating-sub-text {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--section-text-color);
+  line-height: 22px;
+}
+
+.testimonial-rating-content {
+  background: var(--white-color);
+  padding: 24px;
+  border-radius: 16px 16px 0px 0px;
+  flex-grow: 1;
+}
+
+.testimonial-cards {
+  align-items: stretch;
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card-profile {
+  padding: 24px;
+  background: var(--primary-bg);
+  border-radius:  0px 0px 16px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-text-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: var(--white-color);
+}
+
+.profile-name {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.profile-position {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
 }
