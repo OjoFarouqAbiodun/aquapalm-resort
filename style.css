@@ -253,6 +253,11 @@ footer {
   font-size: 14px;
   line-height: 100%;
   letter-spacing: 0.25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
 }
 
 .primary-btn {
