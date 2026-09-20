@@ -1,19 +1,25 @@
 const wrapper = document.querySelector(".hero-slider-wrapper");
 const dots = document.querySelectorAll(".indicator-dot");
 const slides = wrapper.querySelectorAll(".hero-slide");
+
 const firstClone = slides[0].cloneNode(true);
 wrapper.appendChild(firstClone);
+
 const totalSlides = dots.length;
 const totalPanels = slides.length + 1;
-wrapper.style.width = totalPanels * 100 + "%";
 
-let currentIndex = 0; 
+wrapper.style.width = totalPanels * 100 + "%";
+slides.forEach((slide) => {
+  slide.style.flexBasis = 100 / totalPanels + "%";
+});
+
+let currentIndex = 0;
 let autoplayTimer;
 let snapTimer;
 
 function goToSlide(index) {
   currentIndex = index;
-  wrapper.style.transform = `translateX(-${currentIndex * 100}vw)`;
+  wrapper.style.transform = `translateX(-${currentIndex * (100 / totalPanels)}%)`;
   const activeDot = currentIndex === totalSlides ? 0 : currentIndex;
   dots.forEach((d) => d.classList.remove("active"));
   dots[activeDot].classList.add("active");
@@ -28,7 +34,7 @@ function snapBackToStart() {
 
 function startAutoplay() {
   autoplayTimer = setInterval(() => {
-    let nextIndex = currentIndex + 1;
+    const nextIndex = currentIndex + 1;
     goToSlide(nextIndex);
 
     if (nextIndex === totalSlides) {
@@ -43,8 +49,8 @@ function stopAutoplay() {
 }
 
 dots.forEach((dot) => {
-  dot.addEventListener("click", (e) => {
-    const clickedIndex = parseInt(e.target.getAttribute("data-index"));
+  dot.addEventListener("click", () => {
+    const clickedIndex = parseInt(dot.getAttribute("data-index"));
 
     stopAutoplay();
     goToSlide(clickedIndex);
@@ -53,3 +59,22 @@ dots.forEach((dot) => {
 });
 
 startAutoplay();
+
+const navToggle = document.querySelector(".nav-toggle");
+const siteNav = document.querySelector(".site-nav");
+
+function closeNav() {
+  siteNav.classList.remove("open");
+  navToggle.classList.remove("open");
+  navToggle.setAttribute("aria-expanded", "false");
+}
+
+navToggle.addEventListener("click", () => {
+  const isOpen = siteNav.classList.toggle("open");
+  navToggle.classList.toggle("open", isOpen);
+  navToggle.setAttribute("aria-expanded", String(isOpen));
+});
+
+siteNav.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeNav);
+});

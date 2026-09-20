@@ -3,6 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AquaPalm Resort & Spa — a serene tropical retreat where refined comfort, nature, and unforgettable experiences come together. Located in Lagos, Nigeria."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AquaPalm Resort & Spa | Welcome" />
+    <meta
+      property="og:description"
+      content="Escape to where paradise feels like home. A peaceful tropical retreat designed for relaxation, comfort, and unforgettable moments."
+    />
+    <meta property="og:image" content="assets/hero-bg-2.webp" />
+    <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg" />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,8 +22,6 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
@@ -20,33 +30,37 @@
   </head>
   <body>
     <header>
-      <div>
-        <a href="#"><img src="assets/logo.svg" alt="logo" /></a>
+      <div class="header-logo">
+        <a href="#top"><img src="assets/Logo.svg" alt="AquaPalm Resort and Spa logo" /></a>
       </div>
-      <nav>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
         <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Rooms</a></li>
-          <li>
-            <a href="#"
-              >Experiences
-              <!-- <li><a href="#">Ocean Adventures</a></li>
-            <li><a href="#">Spa & Wellness</a></li>
-            <li><a href="#">Sunset Dinning</a></li> -->
-            </a>
-          </li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#top" aria-current="page">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#rooms">Rooms</a></li>
+          <li><a href="#experiences">Experiences</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <div>
-        <button class="book-cta">Book Now</button>
+      <div class="header-actions">
+        <button class="book-cta" type="button">Book Now</button>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
 
     <main>
-      <section class="hero-section">
+      <section class="hero-section" id="top">
         <div class="hero-slider-wrapper">
           <div class="hero-slide slide-1">
             <div class="hero-content">
@@ -102,14 +116,29 @@
             </div>
           </div>
         </div>
-        <div class="hero-slider-indicator">
-          <div class="indicator-dot active" data-index="0"></div>
-          <div class="indicator-dot" data-index="1"></div>
-          <div class="indicator-dot" data-index="2"></div>
+        <div class="hero-slider-indicator" role="group" aria-label="Choose a slide">
+          <button
+            class="indicator-dot active"
+            type="button"
+            data-index="0"
+            aria-label="Go to slide 1"
+          ></button>
+          <button
+            class="indicator-dot"
+            type="button"
+            data-index="1"
+            aria-label="Go to slide 2"
+          ></button>
+          <button
+            class="indicator-dot"
+            type="button"
+            data-index="2"
+            aria-label="Go to slide 3"
+          ></button>
         </div>
       </section>
 
-      <section class="about-section">
+<section class="about-section" id="about">
         <div class="container about-container">
           <div class="about-text-content">
             <span class="section-tag">THE AQUAPALM EXPERIENCE</span>
@@ -120,15 +149,22 @@
               designed spaces to refreshing experiences, every detail is
               designed to help you escape the ordinary.
             </p>
-            <a class="section-link-text" href="#">Discover AqualPalm</a>
+            <a class="section-link-text" href="#">Discover AquaPalm</a>
           </div>
           <div class="about-image-content">
-            <img src="assets/intro-image.svg" alt="about-image" />
+            <img
+              src="assets/intro-image.webp"
+              alt="A peaceful tropical corner of AquaPalm resort surrounded by greenery"
+              width="560"
+              height="380"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
       </section>
 
-      <section class="room-section">
+      <section class="room-section" id="rooms">
         <div class="container">
           <div class="room-text-content">
             <span class="section-tag">STAY WITH US</span>
@@ -141,7 +177,14 @@
           <div class="cards">
             <div class="card">
               <div class="card-image">
-                <img src="assets/room-1.png" alt="room-1-image" />
+                <img
+                  src="assets/room-1.webp"
+                  alt="Palm View Suite interior"
+                  width="2000"
+                  height="1333"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div class="card-text-content">
                 <h3 class="card-title">Palm View Suite</h3>
@@ -157,7 +200,14 @@
             </div>
             <div class="card">
               <div class="card-image">
-                <img src="assets/room-2.png" alt="room-1-image" />
+                <img
+                  src="assets/room-2.webp"
+                  alt="Ocean Retreat room interior"
+                  width="2000"
+                  height="1334"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div class="card-text-content">
                 <h3 class="card-title">Ocean Retreat</h3>
@@ -173,7 +223,14 @@
             </div>
             <div class="card">
               <div class="card-image">
-                <img src="assets/room-3.png" alt="room-1-image" />
+                <img
+                  src="assets/room-3.webp"
+                  alt="Aqua Private Villa interior"
+                  width="2000"
+                  height="1333"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div class="card-text-content">
                 <h3 class="card-title">Aqua Private Villa</h3>
@@ -191,7 +248,7 @@
         </div>
       </section>
 
-      <section class="experience-section">
+      <section class="experience-section" id="experiences">
         <div class="container">
           <div class="experience-text-content">
             <span class="section-tag">DISCOVER AQUAPALM</span>
@@ -205,8 +262,12 @@
             <div class="card">
               <div class="card-image">
                 <img
-                  src="assets/experience-image-1.png"
-                  alt="experience-image-1"
+                  src="assets/experience-image-1.webp"
+                  alt="Guests enjoying an ocean adventure"
+                  width="2000"
+                  height="1333"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="card-text-content">
@@ -220,8 +281,12 @@
             <div class="card">
               <div class="card-image">
                 <img
-                  src="assets/experience-image-2.png"
-                  alt="experience-image-2"
+                  src="assets/experience-image-2.webp"
+                  alt="Peaceful spa and wellness treatment"
+                  width="2000"
+                  height="2000"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="card-text-content">
@@ -235,8 +300,12 @@
             <div class="card">
               <div class="card-image">
                 <img
-                  src="assets/experience-image-3.png"
-                  alt="experience-image-3"
+                  src="assets/experience-image-3.webp"
+                  alt="Sunset dining experience at AquaPalm"
+                  width="2000"
+                  height="1290"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div class="card-text-content">
@@ -251,7 +320,7 @@
         </div>
       </section>
 
-      <section class="gallery-section">
+      <section class="gallery-section" id="gallery">
         <div class="container">
           <div class="gallery-text-content">
             <span class="section-tag">A GLIMPSE OF AQUAPALM</span>
@@ -263,19 +332,54 @@
           </div>
           <div class="gallery-grid">
             <div class="gallery-item item-pool">
-              <img src="assets/item-pool.png" alt="Luxury Swimming Pool" />
+              <img
+                src="assets/item-pool.webp"
+                alt="Luxury swimming pool at AquaPalm"
+                width="2000"
+                height="1334"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="gallery-item item-path">
-              <img src="assets/item-path.png" alt="Resort Walkway" />
+              <img
+                src="assets/item-path.webp"
+                alt="Resort walkway through the palms"
+                width="2000"
+                height="1329"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="gallery-item item-spa">
-              <img src="assets/item-spa.jpg" alt="Spa and Massage Session" />
+              <img
+                src="assets/item-spa.webp"
+                alt="Spa and massage session"
+                width="740"
+                height="493"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="gallery-item item-balcony">
-              <img src="assets/item-balcony.jpg" alt="Room Balcony View" />
+              <img
+                src="assets/item-balcony.webp"
+                alt="Room balcony view over the resort"
+                width="740"
+                height="493"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div class="gallery-item item-dining">
-              <img src="assets/item-dining.jpg" alt="Fine Dining Hall Setup" />
+              <img
+                src="assets/item-dining.webp"
+                alt="Fine dining hall setup"
+                width="740"
+                height="493"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
           <div class="gallery-link">
@@ -293,8 +397,8 @@
             <span class="section-tag">GUEST EXPERIENCE</span>
             <h2 class="section-title">What Our Guests Say</h2>
             <p class="section-sub-text">
-              A beautiful stays, peaceful moments, and memories that worth
-              coming back for.
+              Beautiful stays, peaceful moments, and memories worth coming back
+              for.
             </p>
           </div>
           <div class="cards testimonial-cards">
@@ -312,17 +416,21 @@
                   </div>
                 </div>
                 <p class="testimonial-rating-sub-text">
-                  “AqualPalm gave me exactly the kind of escape I needed. The
+                  “AquaPalm gave me exactly the kind of escape I needed. The
                   atmosphere was peaceful, the surroundings were beautiful, and
-                  every moments felt like a chance to slow down and truly
+                  every moment felt like a chance to slow down and truly
                   relax.”
                 </p>
               </div>
               <div class="testimonial-card-profile">
                 <div class="profile-avatar">
                   <img
-                    src="assets/avatar-1.jpg"
-                    alt="a-gorgeous-dressed-woman"
+                    src="assets/avatar-1.webp"
+                    alt="Portrait of Amara O., AquaPalm guest"
+                    width="320"
+                    height="480"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div class="profile-text-content">
@@ -346,16 +454,20 @@
                 </div>
                 <p class="testimonial-rating-sub-text">
                   "From the beautiful surroundings to the relaxing atmosphere,
-                  AqualPalm made the entire experience feel special. It was the
-                  place to disconnect from everyday life and enjoy some quite
+                  AquaPalm made the entire experience feel special. It was the
+                  place to disconnect from everyday life and enjoy some quiet
                   time."
                 </p>
               </div>
               <div class="testimonial-card-profile">
                 <div class="profile-avatar">
                   <img
-                    src="assets/avatar-2.jpg"
-                    alt="a-corporate-dressed-man"
+                    src="assets/avatar-2.webp"
+                    alt="Portrait of Daniel K., AquaPalm guest"
+                    width="463"
+                    height="480"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div class="profile-text-content">
@@ -385,8 +497,12 @@
               <div class="testimonial-card-profile">
                 <div class="profile-avatar">
                   <img
-                    src="assets/avatar-3.jpg"
-                    alt="a-headshot-lookaway-man"
+                    src="assets/avatar-3.webp"
+                    alt="Portrait of Tolu A., AquaPalm guest"
+                    width="480"
+                    height="480"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div class="profile-text-content">
@@ -409,41 +525,49 @@
               relaxation, comfort, and unforgettable moments.
             </p>
             <div class="booking-cta">
-              <button>BOOK YOUR STAY</button>
+              <button type="button">BOOK YOUR STAY</button>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
+    <footer id="contact">
       <div class="container footer-container">
         <div class="footer-content">
           <div class="info">
             <div class="company-info">
-              <div><img src="assets/Logo.svg" alt="logo-icon-&-text" /></div>
+              <div><img
+                src="assets/Logo.svg"
+                alt="AquaPalm Resort and Spa logo"
+                loading="lazy"
+              /></div>
               <div>
                 <p class="company-info-sub-text">
-                  A beautiful tropical escape designed for unforgettable
-                  Moments.
+                  A beautiful tropical escape designed for unforgettable moments.
                 </p>
               </div>
             </div>
             <div class="social-icons">
               <div class="icon">
-                <img src="assets/x-icon.svg" alt="twitter-logo-icon" />
+                <a href="#" aria-label="Follow AquaPalm on X (Twitter)"
+                  ><img src="assets/x-icon.svg" alt="" /></a
+                >
               </div>
               <div class="icon">
-                <img src="assets/linkedin-icon.svg" alt="linkedin-logo-icon" />
+                <a href="#" aria-label="Follow AquaPalm on LinkedIn"
+                  ><img src="assets/linkedin-icon.svg" alt="" /></a
+                >
               </div>
               <div class="icon">
-                <img
-                  src="assets/instagram-icon.svg"
-                  alt="instagram-logo-icon"
-                />
+                <a href="#" aria-label="Follow AquaPalm on Instagram"
+                  ><img src="assets/instagram-icon.svg" alt="" /></a
+                >
               </div>
               <div class="icon">
-                <img src="assets/facebook-icon.svg" alt="facebook-logo-icon" />
+                <a href="#" aria-label="Follow AquaPalm on Facebook"
+                  ><img src="assets/facebook-icon.svg" alt="" /></a
+                >
               </div>
             </div>
           </div>
@@ -454,18 +578,11 @@
             <div class="links">
               <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Rooms</a></li>
-                <li>
-                  <a href="#"
-                    >Experiences
-                    <!-- <li><a href="#">Ocean Adventures</a></li>
-            <li><a href="#">Spa & Wellness</a></li>
-            <li><a href="#">Sunset Dinning</a></li> -->
-                  </a>
-                </li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
               </ul>
             </div>
           </div>
@@ -477,7 +594,7 @@
               <ul>
                 <li><a href="#">FAQs</a></li>
                 <li><a href="#">Privacy and Policy</a></li>
-                <li><a href="#">Terms and Condition</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
               </ul>
             </div>
           </div>
@@ -488,17 +605,17 @@
             <div class="links">
               <ul class="contact-links">
                 <li>
-                  <a href="#">
+                  <a href="tel:+2349037265807">
                     <div class="icon">
-                      <img src="assets/tel-icon.svg" alt="twitter-logo-icon" />
+                      <img src="assets/tel-icon.svg" alt="Phone" />
                     </div>
                     <span>+234 903 726 5807</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="mailto:kolawoledamilare846@gmail.com">
                     <div class="icon">
-                      <img src="assets/mail-icon.svg" alt="twitter-logo-icon" />
+                      <img src="assets/mail-icon.svg" alt="Email" />
                     </div>
                     <span>kolawoledamilare846@gmail.com</span>
                   </a>
@@ -506,10 +623,7 @@
                 <li>
                   <a href="#">
                     <div class="icon">
-                      <img
-                        src="assets/location-icon.svg"
-                        alt="twitter-logo-icon"
-                      />
+                      <img src="assets/location-icon.svg" alt="Location" />
                     </div>
                     <span>Lagos, Nigeria.</span>
                   </a>
@@ -519,7 +633,7 @@
           </div>
         </div>
         <div class="copyright-info">
-          <div>&copy;2026 AqualPalm Resort & Spa. All rights reserved.</div>
+          <div>&copy;2026 AquaPalm Resort & Spa. All rights reserved.</div>
           <div>Designed by Damilare Kolawole | Developed by Ojo Farouq A.</div>
         </div>
       </div>

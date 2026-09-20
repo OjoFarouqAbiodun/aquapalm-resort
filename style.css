@@ -51,9 +51,8 @@ header {
   color: var(--text-color);
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
-  font-style: medium;
   font-weight: 500;
-  letter-spacing: 1.8%;
+  letter-spacing: 0.25px;
   line-height: 100%;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -71,10 +70,9 @@ header {
   cursor: pointer;
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
-  font-style: semibold;
   font-weight: 600;
   gap: 10px;
-  letter-spacing: 1.8%;
+  letter-spacing: 0.25px;
   line-height: 100%;
   padding: 15px 25px;
   transition: all 0.3s ease;
@@ -83,6 +81,62 @@ header {
 .book-cta:hover {
   background: var(--border-color);
   color: var(--primary-bg);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text-color);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--button-bg);
+  outline-offset: 2px;
+}
+
+.about-section,
+.room-section,
+.experience-section,
+.gallery-section,
+.testimonial-section,
+.booking-section,
+footer {
+  scroll-margin-top: 130px;
 }
 
 .hero-section {
@@ -105,14 +159,13 @@ header {
   flex-direction: column;
   justify-content: center;
   height: 100vh;
-  width: 100vw;
-  flex-shrink: 0;
+  flex: 0 0 25%;
 }
 
 .slide-1 {
   background:
     linear-gradient(to bottom, rgba(16, 47, 45, 0.6), rgba(16, 47, 45, 0.7)),
-    url(assets/hero-bg-1.svg);
+    url(assets/hero-bg-1.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -121,7 +174,7 @@ header {
 .slide-2 {
   background:
     linear-gradient(to bottom, rgba(16, 47, 45, 0.6), rgba(16, 47, 45, 0.7)),
-    url(assets/hero-bg-2.png);
+    url(assets/hero-bg-2.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -130,7 +183,7 @@ header {
 .slide-3 {
   background:
     linear-gradient(to bottom, rgba(16, 47, 45, 0.6), rgba(16, 47, 45, 0.7)),
-    url(assets/hero-bg-3.png);
+    url(assets/hero-bg-3.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -149,10 +202,9 @@ header {
   color: var(--white-color);
   font-family: "DM Sans", sans-serif;
   font-weight: 500;
-  font-style: Medium;
   font-size: 14px;
   line-height: 100%;
-  letter-spacing: 10%;
+  letter-spacing: 1.4px;
   padding-bottom: 24px;
 }
 
@@ -174,7 +226,6 @@ header {
   font-style: normal;
   font-size: 18px;
   line-height: 28px;
-  letter-spacing: 0%;
   color: var(--bg-color);
   padding-bottom: 48px;
   max-width: 640px;
@@ -194,7 +245,7 @@ header {
   font-weight: 600;
   font-size: 14px;
   line-height: 100%;
-  letter-spacing: 1.8%;
+  letter-spacing: 0.25px;
 }
 
 .primary-btn {
@@ -226,8 +277,17 @@ header {
 .hero-slider-indicator .indicator-dot {
   width: 40px;
   height: 5px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.4);
+  transition: background 0.3s ease;
+}
+
+.hero-slider-indicator .indicator-dot:focus-visible {
+  outline: 2px solid var(--white-color);
+  outline-offset: 3px;
 }
 
 .hero-slider-indicator .indicator-dot.active {
@@ -266,7 +326,7 @@ header {
   font-family: "DM Sans", sans-serif;
   font-weight: 500;
   font-size: 13px;
-  letter-spacing: 8%;
+  letter-spacing: 1px;
 }
 
 .section-title {
@@ -274,7 +334,6 @@ header {
   font-weight: 600;
   font-size: 48px;
   line-height: 56px;
-  letter-spacing: 0%;
   color: var(--button-bg);
 }
 
@@ -284,7 +343,6 @@ header {
   font-weight: 400;
   font-size: 16px;
   line-height: 28px;
-  letter-spacing: 0%;
   max-width: 550px;
   text-align: center;
 }
@@ -297,7 +355,7 @@ header {
   font-family: "DM Sans", sans-serif;
   font-weight: 600;
   font-size: 14px;
-  letter-spacing: 1.8%;
+  letter-spacing: 0.25px;
   text-decoration: underline;
   color: var(--button-bg);
 }
@@ -445,7 +503,6 @@ header {
   font-family: "DM Sans", sans-serif;
   font-weight: 600;
   font-size: 14px;
-  letter-spacing: 0%;
   text-decoration: underline;
   color: var(--button-bg);
   display: inline-flex;
@@ -522,7 +579,7 @@ header {
 .booking-section {
   width: 100%;
   height: 500px;
-  background: linear-gradient(rgba(23, 76, 74, 0.7), rgba(23, 76, 74, 0.7)), url(assets/booking-bg.jpg);
+  background: linear-gradient(rgba(23, 76, 74, 0.7), rgba(23, 76, 74, 0.7)), url(assets/booking-bg.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -549,7 +606,7 @@ header {
   font-weight: 500;
   font-size: 13px;
   line-height: 22px;
-  letter-spacing: 8%;
+  letter-spacing: 1px;
   text-align: center;
   color: var(--white-color)
 }
@@ -583,7 +640,7 @@ header {
   font-family: "DM Sans", sans-serif;
   font-weight: 600;
   font-size: 14px;
-  letter-spacing: 1.8%;
+  letter-spacing: 0.25px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -616,10 +673,6 @@ footer {
   grid-template-columns: repeat(4, 1fr);
   padding-bottom: 40px;
   gap: 48px;
-}
-
-.info {
-  width: 400px;
 }
 
 .company-info {
@@ -718,4 +771,144 @@ footer {
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
   font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  header {
+    width: calc(100% - 40px);
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 16px;
+    right: 16px;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  .site-nav.open {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-container {
+    gap: 40px;
+    padding: 32px;
+  }
+
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-title,
+  .booking-section-title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 70px;
+    padding: 10px 16px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .book-cta {
+    display: none;
+  }
+
+  .hero-content {
+    padding: 120px 16px;
+  }
+
+  .hero-content h1 {
+    line-height: 1.2;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-ctas button {
+    width: 100%;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 24px;
+  }
+
+  .about-image-content img {
+    height: 260px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 520px 240px 240px 240px 240px 240px;
+  }
+
+  .item-pool {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  .section-title,
+  .booking-section-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .booking-section {
+    height: auto;
+  }
+
+  .footer-container {
+    padding: 32px 24px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .copyright-info {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-rows: 400px 200px 200px 200px 200px 200px;
+  }
 }
