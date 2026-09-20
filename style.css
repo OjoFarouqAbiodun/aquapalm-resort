@@ -333,7 +333,7 @@ header {
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 26px;
 }
 
@@ -392,9 +392,48 @@ header {
   background: var(--border-color);
 }
 
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 300px);
+  gap: 24px;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+}
+
 .gallery-link {
   display: flex;
   justify-content: flex-end;
+}
+
+.item-pool {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.item-path{
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.item-spa{
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.item-balcony{
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.item-dining{
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
 .gallery-link-text {
