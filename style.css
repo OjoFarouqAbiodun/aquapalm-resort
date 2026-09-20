@@ -590,7 +590,132 @@ header {
 }
 
 .booking-cta button:hover {
-  border: 1px solid var(--white-color);
+  border: 0.5px solid var(--white-color);
   background: transparent;
   color: var(--white-color)
+}
+
+footer {
+  width: 100%;
+  background: var(--primary-bg);
+  padding: 100px 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-container {
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  border-radius: 16px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-bottom: 40px;
+  gap: 48px;
+}
+
+.info {
+  width: 400px;
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: left;
+  padding-bottom: 20px;
+}
+
+.company-info-sub-text {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--section-text-color);
+  line-height: 22px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-bg);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s ease;
+}
+
+.icon img {
+  width: 15px;
+  height: 15px;
+}
+
+.icon:hover {
+  background: var(--border-color);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.links-title {
+  color: var(--section-text-color);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.links ul li{
+  list-style-type: none;
+}
+
+.links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.links ul li a {
+  color: var(--primary-bg);
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.links ul li a:hover {
+  color: var(--section-text-color);
+}
+
+.contact-links li a {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.copyright-info {
+  background: var(--primary-bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
 }
