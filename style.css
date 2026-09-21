@@ -945,3 +945,32 @@ footer {
     grid-template-rows: 400px 200px 200px 200px 200px 200px;
   }
 }
+
+@media (min-width: 1025px) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-bg) var(--bg-color);
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.4em;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-color);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--primary-bg);
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: var(--bg-color);
+  }
+}
