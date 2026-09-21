@@ -3,6 +3,12 @@ const dots = document.querySelectorAll(".indicator-dot");
 const slides = wrapper.querySelectorAll(".hero-slide");
 
 const firstClone = slides[0].cloneNode(true);
+const cloneHeading = firstClone.querySelector("h1");
+if (cloneHeading) {
+  const cloneH2 = document.createElement("h2");
+  cloneH2.textContent = cloneHeading.textContent;
+  cloneHeading.replaceWith(cloneH2);
+}
 wrapper.appendChild(firstClone);
 
 const totalSlides = dots.length;
@@ -48,6 +54,8 @@ function stopAutoplay() {
   clearTimeout(snapTimer);
 }
 
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
 dots.forEach((dot) => {
   dot.addEventListener("click", () => {
     const clickedIndex = parseInt(dot.getAttribute("data-index"));
@@ -58,7 +66,26 @@ dots.forEach((dot) => {
   });
 });
 
-startAutoplay();
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    stopAutoplay();
+  } else if (!reducedMotion) {
+    startAutoplay();
+  }
+});
+
+if (!reducedMotion) {
+  wrapper.addEventListener("mouseenter", stopAutoplay);
+  wrapper.addEventListener("mouseleave", startAutoplay);
+  dots.forEach((dot) => {
+    dot.addEventListener("focusin", stopAutoplay);
+    dot.addEventListener("focusout", startAutoplay);
+  });
+}
+
+if (!reducedMotion) {
+  startAutoplay();
+}
 
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");

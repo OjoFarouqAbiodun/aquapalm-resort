@@ -73,6 +73,8 @@ header {
   border-radius: 24px;
   color: var(--white-color);
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -80,6 +82,7 @@ header {
   letter-spacing: 0.25px;
   line-height: 100%;
   padding: 15px 25px;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
@@ -220,7 +223,8 @@ footer {
   padding-bottom: 24px;
 }
 
-.hero-content h1 {
+.hero-content h1,
+.hero-content h2 {
   font-family: "Playfair Display", serif;
   font-style: normal;
   font-weight: 700;
@@ -648,7 +652,8 @@ footer {
   padding-bottom: 28px;
 }
 
-.booking-cta button {
+.booking-cta button,
+.booking-cta a {
   border: none;
   background: var(--white-color);
   color: var(--primary-bg);
@@ -661,10 +666,15 @@ footer {
   letter-spacing: 0.25px;
   text-align: center;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
 }
 
-.booking-cta button:hover {
+.booking-cta button:hover,
+.booking-cta a:hover {
   border: 0.5px solid var(--white-color);
   background: transparent;
   color: var(--white-color)
@@ -865,7 +875,8 @@ footer {
     padding: 120px 16px;
   }
 
-  .hero-content h1 {
+  .hero-content h1,
+  .hero-content h2 {
     line-height: 1.2;
   }
 
