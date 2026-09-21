@@ -127,3 +127,31 @@ window.addEventListener(
   },
   { passive: true }
 );
+
+window.addEventListener(
+  "scroll",
+  () => {
+    header.classList.toggle("is-sticky", window.scrollY > 80);
+  },
+  { passive: true }
+);
+
+const revealElements = document.querySelectorAll(".scroll-reveal");
+
+if ("IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  revealElements.forEach((el) => revealObserver.observe(el));
+} else {
+  revealElements.forEach((el) => el.classList.add("in-view"));
+}
