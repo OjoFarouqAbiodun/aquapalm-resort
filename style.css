@@ -1216,6 +1216,7 @@ body.modal-open {
   border-radius: 20px;
   padding: 34px 32px 30px;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  font-family: "DM Sans", sans-serif;
   animation: bookingDialogIn 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -1254,6 +1255,7 @@ body.modal-open {
 
 .booking-modal-title {
   font-family: "DM Sans", sans-serif;
+  font-weight: 600;
   font-size: 26px;
   line-height: 1.2;
   color: var(--primary-bg);
@@ -1261,6 +1263,7 @@ body.modal-open {
 }
 
 .booking-modal-sub {
+  font-weight: 400;
   color: var(--section-text-color);
   font-size: 14px;
   line-height: 1.5;
@@ -1299,6 +1302,7 @@ body.modal-open {
   background: var(--bg-color);
   color: var(--text-color);
   font-family: "DM Sans", sans-serif;
+  font-weight: 400;
   font-size: 14px;
   box-sizing: border-box;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -1401,14 +1405,12 @@ body.modal-open {
 
 @media (max-width: 640px) {
   .booking-modal {
-    padding: 0;
-    align-items: flex-end;
-    justify-content: center;
+    padding: 16px;
   }
 
   .booking-modal-dialog {
     max-height: 92vh;
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px;
     padding: 28px 20px 24px;
   }
 
