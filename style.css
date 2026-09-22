@@ -803,6 +803,17 @@ footer {
   font-size: 14px;
 }
 
+.copyright-info a {
+  color: var(--white-color);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.copyright-info a:hover {
+  opacity: 0.8;
+}
+
 @media (max-width: 1024px) {
   header {
     width: calc(100% - 40px);
