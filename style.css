@@ -253,7 +253,9 @@ footer {
   gap: 12px;
 }
 
-.hero-ctas button {
+.hero-ctas button,
+.hero-ctas a {
+  text-decoration: none;
   padding: 17px 23px;
   border-radius: 26px;
   cursor: pointer;
@@ -904,7 +906,8 @@ footer {
     max-width: 320px;
   }
 
-  .hero-ctas button {
+  .hero-ctas button,
+  .hero-ctas a {
     width: 100%;
   }
 
