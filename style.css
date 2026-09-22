@@ -804,14 +804,14 @@ footer {
 }
 
 .copyright-info a {
-  color: var(--white-color);
-  font-weight: 600;
+  color: inherit;
+  font-weight: 400;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .copyright-info a:hover {
-  opacity: 0.8;
+  color: var(--white-color);
 }
 
 @media (max-width: 1024px) {
