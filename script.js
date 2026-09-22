@@ -42,8 +42,15 @@ function snapBackToStart() {
 
 function startAutoplay() {
   if (autoplayTimer) return;
+  if (currentIndex === totalSlides) {
+    snapBackToStart();
+  }
   autoplayTimer = setInterval(() => {
     const nextIndex = currentIndex + 1;
+    if (nextIndex > totalSlides) {
+      snapBackToStart();
+      return;
+    }
     goToSlide(nextIndex);
 
     if (nextIndex === totalSlides) {
