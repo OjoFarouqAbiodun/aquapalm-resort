@@ -140,6 +140,19 @@ window.addEventListener(
   { passive: true }
 );
 
+const backToTop = document.getElementById("back-to-top");
+const backToTopThreshold = 300;
+
+if (backToTop) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      backToTop.classList.toggle("visible", window.scrollY > backToTopThreshold);
+    },
+    { passive: true }
+  );
+}
+
 const revealElements = document.querySelectorAll(".scroll-reveal");
 
 if ("IntersectionObserver" in window) {
