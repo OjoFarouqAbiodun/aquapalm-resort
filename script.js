@@ -1,3 +1,5 @@
+document.documentElement.classList.add("js");
+
 const wrapper = document.querySelector(".hero-slider-wrapper");
 const dots = document.querySelectorAll(".indicator-dot");
 const slides = wrapper.querySelectorAll(".hero-slide");
@@ -39,6 +41,7 @@ function snapBackToStart() {
 }
 
 function startAutoplay() {
+  if (autoplayTimer) return;
   autoplayTimer = setInterval(() => {
     const nextIndex = currentIndex + 1;
     goToSlide(nextIndex);
@@ -52,6 +55,7 @@ function startAutoplay() {
 function stopAutoplay() {
   clearInterval(autoplayTimer);
   clearTimeout(snapTimer);
+  autoplayTimer = null;
 }
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

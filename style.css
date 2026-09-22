@@ -504,19 +504,19 @@ footer {
   grid-row: span 2;
 }
 
-.item-path{
+.item-path {
   grid-column: span 1;
   grid-row: span 1;
 }
-.item-spa{
+.item-spa {
   grid-column: span 1;
   grid-row: span 1;
 }
-.item-balcony{
+.item-balcony {
   grid-column: span 1;
   grid-row: span 1;
 }
-.item-dining{
+.item-dining {
   grid-column: span 1;
   grid-row: span 1;
 }
@@ -630,15 +630,15 @@ footer {
   line-height: 22px;
   letter-spacing: 1px;
   text-align: center;
-  color: var(--white-color)
+  color: var(--white-color);
 }
 
 .booking-section-title {
-  font-family: "Playfair Display", serif;font-weight: 600;
+  font-family: "Playfair Display", serif; font-weight: 600;
   font-size: 48px;
   line-height: 56px;
   text-align: center;
-  color: var(--white-color)
+  color: var(--white-color);
 }
 
 .booking-section-sub-text {
@@ -677,7 +677,7 @@ footer {
 .booking-cta a:hover {
   border: 0.5px solid var(--white-color);
   background: transparent;
-  color: var(--white-color)
+  color: var(--white-color);
 }
 
 footer {
@@ -759,7 +759,7 @@ footer {
   font-size: 12px;
 }
 
-.links ul li{
+.links ul li {
   list-style-type: none;
 }
 
@@ -946,38 +946,36 @@ footer {
   }
 }
 
-@media (min-width: 1025px) {
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(23, 76, 74, 0.8) var(--bg-color);
-  }
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(23, 76, 74, 0.8) transparent;
+}
 
-  html::-webkit-scrollbar {
-    width: 6px;
-  }
+html::-webkit-scrollbar {
+  width: 6px;
+}
 
-  html::-webkit-scrollbar-track {
-    background: var(--bg-color);
-  }
+html::-webkit-scrollbar-track {
+  background: transparent !important;
+}
 
-  html::-webkit-scrollbar-thumb {
-    background: rgba(23, 76, 74, 0.4);
-    border-radius: 20px;
-  }
+html::-webkit-scrollbar-thumb {
+  background: rgba(23, 76, 74, 0.4);
+  border-radius: 20px;
+}
 
-  html::-webkit-scrollbar-thumb:hover {
-    background: rgba(23, 76, 74, 0.8);
-  }
+html::-webkit-scrollbar-thumb:hover {
+  background: rgba(23, 76, 74, 0.8);
+}
 
-  html::-webkit-scrollbar-button {
-    display: none;
-    height: 0;
-    width: 0;
-  }
+html::-webkit-scrollbar-button {
+  display: none !important;
+  height: 0;
+  width: 0;
+}
 
-  html::-webkit-scrollbar-corner {
-    background: var(--bg-color);
-  }
+html::-webkit-scrollbar-corner {
+  background: transparent !important;
 }
 
 @keyframes heroFadeUp {
@@ -1070,13 +1068,13 @@ header.is-sticky {
   -webkit-backdrop-filter: blur(12px);
 }
 
-.scroll-reveal {
+.js .scroll-reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.scroll-reveal.in-view {
+.js .scroll-reveal.in-view {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1090,7 +1088,7 @@ header.is-sticky {
     animation: none;
   }
 
-  .scroll-reveal {
+  .js .scroll-reveal {
     opacity: 1;
     transform: none;
     transition: none;
