@@ -116,7 +116,11 @@ header {
   height: 2px;
   border-radius: 50px;
   background: var(--text-color);
-  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease, background 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    width 0.3s ease,
+    background 0.3s ease;
 }
 
 .nav-toggle:hover span {
@@ -567,7 +571,7 @@ footer {
 .testimonial-card-profile {
   padding: 24px;
   background: var(--primary-bg);
-  border-radius:  0px 0px 16px 16px;
+  border-radius: 0px 0px 16px 16px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -603,7 +607,9 @@ footer {
 .booking-section {
   width: 100%;
   height: 500px;
-  background: linear-gradient(rgba(23, 76, 74, 0.7), rgba(23, 76, 74, 0.7)), url(assets/booking-bg.webp);
+  background:
+    linear-gradient(rgba(23, 76, 74, 0.7), rgba(23, 76, 74, 0.7)),
+    url(assets/booking-bg.webp);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -636,7 +642,8 @@ footer {
 }
 
 .booking-section-title {
-  font-family: "Playfair Display", serif; font-weight: 600;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
   font-size: 48px;
   line-height: 56px;
   text-align: center;
@@ -1089,7 +1096,11 @@ html::-webkit-scrollbar-corner {
 }
 
 header {
-  transition: transform 0.35s ease, height 0.35s ease, padding 0.35s ease, background 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    height 0.35s ease,
+    padding 0.35s ease,
+    background 0.35s ease;
 }
 
 header.is-sticky {
@@ -1103,7 +1114,9 @@ header.is-sticky {
 .js .scroll-reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .js .scroll-reveal.in-view {
@@ -1132,7 +1145,10 @@ header.is-sticky {
   position: fixed;
   right: 28px;
   transform: translateY(12px);
-  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), background 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    background 0.4s ease;
   width: 52px;
   z-index: 90;
 }
@@ -1234,7 +1250,9 @@ body.modal-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .booking-modal-close:hover {
@@ -1305,7 +1323,9 @@ body.modal-open {
   font-weight: 400;
   font-size: 14px;
   box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .booking-form input:focus,

@@ -65,7 +65,9 @@ function stopAutoplay() {
   autoplayTimer = null;
 }
 
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const reducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
 
 dots.forEach((dot) => {
   dot.addEventListener("click", () => {
@@ -136,7 +138,7 @@ window.addEventListener(
 
     lastScrollY = scrollY;
   },
-  { passive: true }
+  { passive: true },
 );
 
 window.addEventListener(
@@ -144,7 +146,7 @@ window.addEventListener(
   () => {
     header.classList.toggle("is-sticky", window.scrollY > 80);
   },
-  { passive: true }
+  { passive: true },
 );
 
 const backToTop = document.getElementById("back-to-top");
@@ -154,9 +156,12 @@ if (backToTop) {
   window.addEventListener(
     "scroll",
     () => {
-      backToTop.classList.toggle("visible", window.scrollY > backToTopThreshold);
+      backToTop.classList.toggle(
+        "visible",
+        window.scrollY > backToTopThreshold,
+      );
     },
-    { passive: true }
+    { passive: true },
   );
 }
 
@@ -172,7 +177,7 @@ if ("IntersectionObserver" in window) {
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.15 },
   );
 
   revealElements.forEach((el) => revealObserver.observe(el));
@@ -204,9 +209,11 @@ function closeBookingModal() {
 
 function trapFocus(event) {
   if (event.key !== "Tab") return;
-  const focusables = [...bookingModal.querySelectorAll('button:not([disabled]), input:not([type="hidden"]):not([disabled]), select:not([disabled]), textarea:not([disabled]), [href], [tabindex]:not([tabindex="-1"])')].filter(
-    (el) => el.offsetParent !== null
-  );
+  const focusables = [
+    ...bookingModal.querySelectorAll(
+      'button:not([disabled]), input:not([type="hidden"]):not([disabled]), select:not([disabled]), textarea:not([disabled]), [href], [tabindex]:not([tabindex="-1"])',
+    ),
+  ].filter((el) => el.offsetParent !== null);
   if (!focusables.length) return;
   const first = focusables[0];
   const last = focusables[focusables.length - 1];
@@ -246,25 +253,31 @@ bookingForm.addEventListener("submit", async (event) => {
     const data = Object.fromEntries(new FormData(bookingForm).entries());
     const response = await fetch(bookingForm.action, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
       body: JSON.stringify(data),
     });
     if (response.ok) {
       bookingStatus.classList.remove("error");
       bookingStatus.classList.add("success");
-      bookingStatus.textContent = "Request sent! AquaPalm will be in touch to confirm your stay.";
+      bookingStatus.textContent =
+        "Request sent! AquaPalm will be in touch to confirm your stay.";
       bookingStatus.hidden = false;
       bookingForm.reset();
     } else {
       bookingStatus.classList.remove("success");
       bookingStatus.classList.add("error");
-      bookingStatus.textContent = "That didn't go through. Please email your request or try again.";
+      bookingStatus.textContent =
+        "That didn't go through. Please email your request or try again.";
       bookingStatus.hidden = false;
     }
   } catch (error) {
     bookingStatus.classList.remove("success");
     bookingStatus.classList.add("error");
-    bookingStatus.textContent = "Something went wrong. Please email your request or try again.";
+    bookingStatus.textContent =
+      "Something went wrong. Please email your request or try again.";
     bookingStatus.hidden = false;
   }
   submitBtn.disabled = false;
